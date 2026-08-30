@@ -2,12 +2,15 @@
   ".url": {
     "fnos-docker-deployer.Application": {
       "title": "Docker 部署器",
+      "desc": "在 fnOS 中部署和管理 Docker 项目",
       "icon": "images/icon_{0}.png",
       "type": "iframe",
       "protocol": "http",
-      "port": "",
       "url": "/cgi/ThirdParty/fnos-docker-deployer/index.cgi/",
-      "allUsers": false
+      "allUsers": false,
+      "control": {
+        "accessPerm": "readonly"
+      }
     }
   }
 }

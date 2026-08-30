@@ -13,5 +13,6 @@ python3 "$APP_ROOT/scripts/write_settings.py" \
   --lan-ip "$LAN_IP" \
   --settings "$DOCKER_ROOT/.fnos-docker-deployer/settings.json"
 
-chmod 0700 "$APP_ROOT/ui/index.cgi" "$APP_ROOT/scripts/worker.py"
+chmod 0755 "$APP_ROOT/ui/index.cgi"
+chmod 0700 "$APP_ROOT/scripts/worker.py"
 exit 0

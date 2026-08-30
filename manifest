@@ -1,5 +1,5 @@
 appname=fnos-docker-deployer
-version=0.1.0
+version=0.1.1
 display_name=飞牛 Docker 部署器
 desc=在中文向导中部署任意 Docker 镜像或公开 GitHub Compose 项目，项目统一保存在 /vol1/Docker。
 source=thirdparty
@@ -12,4 +12,4 @@ ctl_stop=false
 checkport=false
 install_type=root
 disable_authorization_path=true
-changelog=首个版本：支持镜像部署、GitHub Compose 部署、可选 AI 草稿、后台任务、项目状态与安全更新。
+changelog=修复 fnOS CGI 入口执行权限，补充管理员入口权限声明。

@@ -8,7 +8,8 @@ version="$(awk -F= '$1 == "version" {print $2; exit}' "$repo_root/manifest")"
 command -v fnpack >/dev/null 2>&1 || { echo '未找到 fnpack，请在 fnOS 上运行本脚本。' >&2; exit 1; }
 command -v python3 >/dev/null 2>&1 || { echo '未找到 Python 3。' >&2; exit 1; }
 
-chmod 0700 "$repo_root"/cmd/* "$repo_root/app/ui/index.cgi" "$repo_root"/app/scripts/*.py
+chmod 0700 "$repo_root"/cmd/* "$repo_root"/app/scripts/*.py
+chmod 0755 "$repo_root/app/ui/index.cgi"
 PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s "$repo_root/tests" -v
 python3 - "$repo_root" <<'PY'
 from pathlib import Path
