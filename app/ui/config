@@ -1,0 +1,13 @@
+{
+  ".url": {
+    "fnos-docker-deployer.Application": {
+      "title": "Docker 部署器",
+      "icon": "images/icon_{0}.png",
+      "type": "iframe",
+      "protocol": "http",
+      "port": "",
+      "url": "/cgi/ThirdParty/fnos-docker-deployer/index.cgi/",
+      "allUsers": false
+    }
+  }
+}

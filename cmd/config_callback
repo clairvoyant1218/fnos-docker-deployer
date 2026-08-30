@@ -1,0 +1,14 @@
+#!/bin/bash
+set -eu
+
+APP_ROOT="${TRIM_APPDEST:?TRIM_APPDEST is required}"
+DOCKER_ROOT="${wizard_docker_root:-/vol1/Docker}"
+LAN_IP="${wizard_lan_ip:-}"
+
+mkdir -p "$DOCKER_ROOT/.fnos-docker-deployer/jobs"
+chmod 0700 "$DOCKER_ROOT/.fnos-docker-deployer" "$DOCKER_ROOT/.fnos-docker-deployer/jobs"
+python3 "$APP_ROOT/scripts/write_settings.py" \
+  --root "$DOCKER_ROOT" \
+  --lan-ip "$LAN_IP" \
+  --settings "$DOCKER_ROOT/.fnos-docker-deployer/settings.json"
+exit 0

@@ -1,0 +1,33 @@
+[
+  {
+    "stepTitle": "部署器设置",
+    "items": [
+      {
+        "type": "text",
+        "field": "wizard_docker_root",
+        "label": "Docker 项目根目录",
+        "initValue": "/vol1/Docker",
+        "rules": [
+          {
+            "required": true,
+            "message": "请输入 Docker 项目根目录"
+          },
+          {
+            "pattern": "^/vol1/Docker$",
+            "message": "当前版本固定使用 /vol1/Docker"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "field": "wizard_lan_ip",
+        "label": "NAS 局域网 IP（留空自动检测）",
+        "initValue": "192.168.10.8"
+      },
+      {
+        "type": "tips",
+        "helpText": "修改后不会自动重建现有容器。新项目会使用新的默认局域网 IP。"
+      }
+    ]
+  }
+]

@@ -1,0 +1,58 @@
+[
+  {
+    "stepTitle": "存储位置",
+    "items": [
+      {
+        "type": "tips",
+        "helpText": "部署器会把每个项目保存到 /vol1/Docker/项目名。卸载本应用时默认保留全部项目、容器、配置和数据卷。"
+      },
+      {
+        "type": "text",
+        "field": "wizard_docker_root",
+        "label": "Docker 项目根目录",
+        "initValue": "/vol1/Docker",
+        "rules": [
+          {
+            "required": true,
+            "message": "请输入 Docker 项目根目录"
+          },
+          {
+            "pattern": "^/vol1/Docker$",
+            "message": "当前版本固定使用 /vol1/Docker"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "stepTitle": "网络与权限",
+    "items": [
+      {
+        "type": "text",
+        "field": "wizard_lan_ip",
+        "label": "NAS 局域网 IP（留空自动检测）",
+        "initValue": "192.168.10.8"
+      },
+      {
+        "type": "tips",
+        "helpText": "端口默认只绑定 NAS 的局域网 IP，不绑定 0.0.0.0。每个容器都可单独选择 root 用户或特权模式。"
+      },
+      {
+        "type": "select",
+        "field": "wizard_root_confirm",
+        "label": "确认应用权限",
+        "initValue": "confirmed",
+        "options": [
+          {
+            "label": "确认：允许本应用以 root 管理 Docker",
+            "value": "confirmed"
+          },
+          {
+            "label": "不确认（安装将停止）",
+            "value": "rejected"
+          }
+        ]
+      }
+    ]
+  }
+]

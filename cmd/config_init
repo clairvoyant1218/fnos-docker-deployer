@@ -1,0 +1,10 @@
+#!/bin/bash
+set -eu
+
+fail() {
+  printf '%s\n' "$1" > "${TRIM_TEMP_LOGFILE:-/tmp/fnos-docker-deployer-error.log}"
+  exit 1
+}
+
+[ "${wizard_docker_root:-}" = "/vol1/Docker" ] || fail "当前版本只允许使用 /vol1/Docker。"
+exit 0

@@ -1,0 +1,7 @@
+{
+  "defaults": {
+    "run-as": "root"
+  },
+  "username": "fnos_docker_deployer",
+  "groupname": "fnos_docker_deployer"
+}

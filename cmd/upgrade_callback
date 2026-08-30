@@ -1,0 +1,6 @@
+#!/bin/bash
+set -eu
+DOCKER_ROOT="/vol1/Docker"
+mkdir -p "$DOCKER_ROOT/.fnos-docker-deployer/jobs"
+chmod 0700 "$DOCKER_ROOT/.fnos-docker-deployer" "$DOCKER_ROOT/.fnos-docker-deployer/jobs"
+exit 0

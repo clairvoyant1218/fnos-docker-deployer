@@ -1,0 +1,23 @@
+[
+  {
+    "stepTitle": "卸载确认",
+    "items": [
+      {
+        "type": "tips",
+        "helpText": "卸载只移除飞牛应用入口。/vol1/Docker 下的项目文件、容器、镜像、数据库和数据卷全部保留，避免误删数据。"
+      },
+      {
+        "type": "select",
+        "field": "wizard_uninstall_mode",
+        "label": "数据处理",
+        "initValue": "keep_all",
+        "options": [
+          {
+            "label": "保留全部 Docker 项目和数据",
+            "value": "keep_all"
+          }
+        ]
+      }
+    ]
+  }
+]

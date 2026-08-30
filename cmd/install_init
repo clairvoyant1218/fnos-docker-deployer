@@ -1,0 +1,15 @@
+#!/bin/bash
+set -eu
+
+fail() {
+  printf '%s\n' "$1" > "${TRIM_TEMP_LOGFILE:-/tmp/fnos-docker-deployer-error.log}"
+  exit 1
+}
+
+[ "${wizard_root_confirm:-}" = "confirmed" ] || fail "必须确认 root Docker 管理权限后才能安装。"
+[ "${wizard_docker_root:-}" = "/vol1/Docker" ] || fail "当前版本只允许使用 /vol1/Docker。"
+command -v docker >/dev/null 2>&1 || fail "未找到 Docker，请先在飞牛应用中心安装并启动 Docker。"
+docker info >/dev/null 2>&1 || fail "Docker 服务当前不可用，请先启动 Docker。"
+command -v python3 >/dev/null 2>&1 || fail "系统缺少 Python 3，无法运行部署器界面。"
+command -v git >/dev/null 2>&1 || fail "系统缺少 Git，无法部署 GitHub 项目。"
+exit 0
