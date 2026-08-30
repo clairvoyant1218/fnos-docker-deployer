@@ -10,6 +10,7 @@ command -v python3 >/dev/null 2>&1 || { echo '未找到 Python 3。' >&2; exit 1
 
 chmod 0700 "$repo_root"/cmd/* "$repo_root"/app/scripts/*.py
 chmod 0755 "$repo_root/app/ui/index.cgi"
+chmod 0644 "$repo_root/app/ui/config" "$repo_root"/app/ui/images/*.png
 PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s "$repo_root/tests" -v
 python3 - "$repo_root" <<'PY'
 from pathlib import Path

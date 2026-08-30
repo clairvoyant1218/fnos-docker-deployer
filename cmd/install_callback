@@ -14,5 +14,6 @@ python3 "$APP_ROOT/scripts/write_settings.py" \
   --settings "$DOCKER_ROOT/.fnos-docker-deployer/settings.json"
 
 chmod 0755 "$APP_ROOT/ui/index.cgi"
+chmod 0644 "$APP_ROOT/ui/config" "$APP_ROOT/ui/images/"*.png
 chmod 0700 "$APP_ROOT/scripts/worker.py"
 exit 0

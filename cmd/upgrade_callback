@@ -1,6 +1,10 @@
 #!/bin/bash
 set -eu
+APP_ROOT="${TRIM_APPDEST:?TRIM_APPDEST is required}"
 DOCKER_ROOT="/vol1/Docker"
 mkdir -p "$DOCKER_ROOT/.fnos-docker-deployer/jobs"
 chmod 0700 "$DOCKER_ROOT/.fnos-docker-deployer" "$DOCKER_ROOT/.fnos-docker-deployer/jobs"
+chmod 0755 "$APP_ROOT/ui/index.cgi"
+chmod 0644 "$APP_ROOT/ui/config" "$APP_ROOT/ui/images/"*.png
+chmod 0700 "$APP_ROOT/scripts/worker.py"
 exit 0
