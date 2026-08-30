@@ -1,5 +1,5 @@
 appname=fnos-docker-deployer
-version=0.1.2
+version=0.1.3
 display_name=飞牛 Docker 部署器
 desc=在中文向导中部署任意 Docker 镜像或公开 GitHub Compose 项目，项目统一保存在 /vol1/Docker。
 source=thirdparty
@@ -12,4 +12,4 @@ ctl_stop=false
 checkport=false
 install_type=root
 disable_authorization_path=true
-changelog=修复应用中心无法打开 CGI 页面的入口配置，并统一 UI 文件读取权限。
+changelog=改用独立标签页启动 CGI 管理界面，兼容当前 fnOS 应用中心。
